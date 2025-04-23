@@ -8,8 +8,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -36,21 +38,29 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User findByUsername(String username) {
-        return userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    public Optional<User> findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
-    public User authenticate(String username, String password) {
-        User user = findByUsername(username);
-        if (passwordEncoder.matches(password, user.getPassword())) {
-            return user;
-        }
-        throw new BadCredentialsException("Invalid credentials");
+    public User findOrFailByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
     public User findById(Long userId) {
         return userRepository.findById(userId)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    }
+
+    public boolean existsByUsername(String username) {
+        return userRepository.findByUsername(username).isPresent();
+    }
+
+    public User authenticate(String username, String password) {
+        User user = findOrFailByUsername(username);
+        if (passwordEncoder.matches(password, user.getPassword())) {
+            return user;
+        }
+        throw new BadCredentialsException("Invalid credentials");
     }
 }

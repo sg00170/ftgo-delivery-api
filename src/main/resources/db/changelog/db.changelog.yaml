@@ -18,3 +18,13 @@ databaseChangeLog:
               - column:
                   name: password
                   type: VARCHAR(255)
+        - addUniqueConstraint:
+            columnNames: username
+            constraintName: unique_users_username
+            tableName: users
+        - createIndex:
+            tableName: users
+            indexName: index_users_username
+            columns:
+              - column:
+                  name: username
