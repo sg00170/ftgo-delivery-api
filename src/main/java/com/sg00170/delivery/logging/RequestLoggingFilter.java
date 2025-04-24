@@ -38,6 +38,6 @@ public class RequestLoggingFilter extends OncePerRequestFilter {
             requestBody = new String(content, StandardCharsets.UTF_8);
         }
 
-        log.info("➡️ {} {}\n Body: {}", method, fullUri, requestBody);
+        log.info("{} {}\n Body: {}", method, fullUri, requestBody);
     }
 }
