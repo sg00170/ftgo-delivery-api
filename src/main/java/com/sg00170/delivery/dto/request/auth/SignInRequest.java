@@ -1,4 +1,4 @@
-package com.sg00170.delivery.dto.request;
+package com.sg00170.delivery.dto.request.auth;
 
 import com.sg00170.delivery.validation.constraints.ExistsField;
 import com.sg00170.delivery.validation.constraints.Password;

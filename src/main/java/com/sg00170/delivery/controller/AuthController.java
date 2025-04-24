@@ -1,7 +1,7 @@
 package com.sg00170.delivery.controller;
 
-import com.sg00170.delivery.dto.request.SignInRequest;
-import com.sg00170.delivery.dto.request.SignUpRequest;
+import com.sg00170.delivery.dto.request.auth.SignInRequest;
+import com.sg00170.delivery.dto.request.auth.SignUpRequest;
 import com.sg00170.delivery.model.User;
 import com.sg00170.delivery.service.UserService;
 import com.sg00170.delivery.util.JwtUtil;

@@ -17,3 +17,9 @@ spring:
 jwt:
   secret: MySecretKeyMySecretKeyMySecretKey!
   expiration: 3600000
+logging:
+  file:
+    name: logs/app.log
+  level:
+    root: INFO
+    com.sg00170.delivery: DEBUG

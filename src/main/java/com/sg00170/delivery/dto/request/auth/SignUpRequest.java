@@ -1,10 +1,9 @@
-package com.sg00170.delivery.dto.request;
+package com.sg00170.delivery.dto.request.auth;
 
 import com.sg00170.delivery.validation.constraints.Password;
 import com.sg00170.delivery.validation.constraints.PasswordMatch;
 import com.sg00170.delivery.validation.constraints.UniqueField;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 
 import lombok.*;
 

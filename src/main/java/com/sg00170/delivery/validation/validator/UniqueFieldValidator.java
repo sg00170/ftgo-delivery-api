@@ -17,11 +17,13 @@ public class UniqueFieldValidator implements ConstraintValidator<UniqueField, Ob
 
     private String table;
     private String field;
+    private String message;
 
     @Override
     public void initialize(UniqueField constraintAnnotation) {
         this.table = constraintAnnotation.table();
         this.field = constraintAnnotation.field();
+        this.message = constraintAnnotation.message();
     }
 
     @Override
@@ -33,8 +35,11 @@ public class UniqueFieldValidator implements ConstraintValidator<UniqueField, Ob
 
             if (fieldValue == null) return true;
 
-            // 여기서는 UserRepository만 예시로 씀
-            // 실제로는 Repository를 추상화하거나 @Qualifier로 분기 처리 가능
+            context.disableDefaultConstraintViolation();
+            context.buildConstraintViolationWithTemplate(message)
+                    .addPropertyNode(field)
+                    .addConstraintViolation();
+
             String fullKey = table + "." + field;
             return switch (fullKey) {
                 case "users.username" -> !userRepository.existsByUsername(fieldValue.toString());
