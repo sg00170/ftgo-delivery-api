@@ -28,3 +28,19 @@ databaseChangeLog:
             columns:
               - column:
                   name: username
+  - changeSet:
+      id: 2
+      author: misunkwon
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: state
+                  type: TINYINT
