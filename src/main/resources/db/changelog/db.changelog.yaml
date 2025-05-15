@@ -1,46 +1,21 @@
 databaseChangeLog:
-  - changeSet:
-      id: 1
-      author: misunkwon
-      changes:
-        - createTable:
-            tableName: users
-            columns:
-              - column:
-                  name: id
-                  type: BIGINT
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-              - column:
-                  name: username
-                  type: VARCHAR(255)
-              - column:
-                  name: password
-                  type: VARCHAR(255)
-        - addUniqueConstraint:
-            columnNames: username
-            constraintName: unique_users_username
-            tableName: users
-        - createIndex:
-            tableName: users
-            indexName: index_users_username
-            columns:
-              - column:
-                  name: username
-  - changeSet:
-      id: 2
-      author: misunkwon
-      changes:
-        - createTable:
-            tableName: orders
-            columns:
-              - column:
-                  name: id
-                  type: BIGINT
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-              - column:
-                  name: state
-                  type: TINYINT
+  - include:
+      file: db/changelog/db.changelog-users.yaml
+  - include:
+      file: db/changelog/db.changelog-locations.yaml
+  - include:
+      file: db/changelog/db.changelog-couriers.yaml
+  - include:
+      file: db/changelog/db.changelog-restaurants.yaml
+  - include:
+      file: db/changelog/db.changelog-addresses.yaml
+  - include:
+      file: db/changelog/db.changelog-menu_items.yaml
+  - include:
+      file: db/changelog/db.changelog-orders.yaml
+  - include:
+      file: db/changelog/db.changelog-order_items.yaml
+  - include:
+      file: db/changelog/db.changelog-payments.yaml
+  - include:
+      file: db/changelog/db.changelog-deliveries.yaml

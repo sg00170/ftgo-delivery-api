@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: misunkwon
+      changes:
+        - createTable:
+            tableName: payments
+            columns:
+              - column:
+                  name: credit_card_id
+                  type: varchar(255)

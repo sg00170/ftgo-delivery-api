@@ -2,6 +2,7 @@ package com.sg00170.delivery.config;
 
 import com.sg00170.delivery.dto.response.error.ResponseBody;
 import com.sg00170.delivery.dto.response.error.ResponseMessage;
+import com.sg00170.delivery.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -43,5 +44,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<?> handleBadCredentials(BadCredentialsException e) {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ResponseMessage("비밀번호가 올바르지 않습니다."));
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<String> handleNotFound(NotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 }

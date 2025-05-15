@@ -3,7 +3,7 @@ spring:
     name: delivery
     environment: local
   datasource:
-    url: jdbc:mysql://localhost:3306/micro_delivery
+    url: jdbc:mysql://localhost:3306/ftgo_delivery
     username: local
     password: Secret12!@
     driver-class-name: com.mysql.cj.jdbc.Driver

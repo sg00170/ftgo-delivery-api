@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: misunkwon
+      changes:
+        - createTable:
+            tableName: menu_items
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: price
+                  type: float(10, 2)
+        - createIndex:
+            tableName: menu_items
+            indexName: index_menu_items_name
+            columns:
+              - column:
+                  name: name
