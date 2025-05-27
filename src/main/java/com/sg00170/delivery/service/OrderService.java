@@ -18,8 +18,12 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Order findById(Long id) {
+    public Order findOrderById(Long id) {
         return orderRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Order not found"));
+    }
+
+    public Long createOrder(Order order) {
+        return orderRepository.save(order).getId();
     }
 }

@@ -18,7 +18,7 @@ public class AddressService {
         return addressRepository.findAll();
     }
 
-    public Address findById(Long id) {
+    public Address findAddressById(Long id) {
         return addressRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Address not found"));
     }

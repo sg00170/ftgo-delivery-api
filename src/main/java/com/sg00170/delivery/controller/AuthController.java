@@ -19,7 +19,8 @@ public class AuthController {
 
     @Autowired
     private UserService userService;
-    @Autowired private JwtUtil jwtUtil;
+    @Autowired
+    private JwtUtil jwtUtil;
 
     @PostMapping("/sign-in")
     public ResponseEntity<Map<String, String>> signIn(@Valid @RequestBody SignInRequest request) {

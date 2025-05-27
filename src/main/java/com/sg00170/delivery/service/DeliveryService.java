@@ -18,7 +18,7 @@ public class DeliveryService {
         return deliveryRepository.findAll();
     }
 
-    public Delivery findById(Long id) {
+    public Delivery findDeliveryById(Long id) {
         return deliveryRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Delivery not found"));
     }

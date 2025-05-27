@@ -18,7 +18,7 @@ public class OrderItemService {
         return orderItemRepository.findAll();
     }
 
-    public OrderItem findById(Long id) {
+    public OrderItem findOrderItemById(Long id) {
         return orderItemRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("OrderItem not found"));
     }

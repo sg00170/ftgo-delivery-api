@@ -18,7 +18,7 @@ public class CourierService {
         return courierRepository.findAll();
     }
 
-    public Courier findById(Long id) {
+    public Courier findCourierById(Long id) {
         return courierRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Courier not found"));
     }

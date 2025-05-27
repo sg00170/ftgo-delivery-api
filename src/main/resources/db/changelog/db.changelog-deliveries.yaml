@@ -13,5 +13,8 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
-                  name: delivery_time
+                  name: scheduled_pick_up_time
+                  type: timestamp
+              - column:
+                  name: scheduled_delivery_time
                   type: timestamp

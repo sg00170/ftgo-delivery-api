@@ -15,5 +15,6 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String credit_card_id;
+    @Column(name = "credit_card_id")
+    private String creditCardId;
 }

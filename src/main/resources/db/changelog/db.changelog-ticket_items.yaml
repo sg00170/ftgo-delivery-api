@@ -4,7 +4,7 @@ databaseChangeLog:
       author: misunkwon
       changes:
         - createTable:
-            tableName: orders
+            tableName: ticket_items
             columns:
               - column:
                   name: id
@@ -13,11 +13,14 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
               - column:
-                  name: status
-                  type: tinyint
-              - column:
-                  name: order_total
+                  name: quantity
                   type: smallint
               - column:
-                  name: delivery_time
-                  type: timestamp
+                  name: item
+                  type: varchar(255)
+        - createIndex:
+            tableName: status
+            indexName: index_tickets_status
+            columns:
+              - column:
+                  name: status

@@ -17,5 +17,9 @@ public class Delivery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime delivery_time;
+    private Short status;
+    @Column(name = "scheduled_pick_up_time")
+    private LocalDateTime scheduledPickUpTime;
+    @Column(name = "scheduled_delivery_time")
+    private LocalDateTime scheduledDeliveryTime;
 }

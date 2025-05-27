@@ -19,3 +19,7 @@ databaseChangeLog:
       file: db/changelog/db.changelog-payments.yaml
   - include:
       file: db/changelog/db.changelog-deliveries.yaml
+  - include:
+      file: db/changelog/db.changelog-tickets.yaml
+  - include:
+      file: db/changelog/db.changelog-ticket_items.yaml

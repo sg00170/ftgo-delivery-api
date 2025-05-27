@@ -18,7 +18,7 @@ public class LocationService {
         return locationRepository.findAll();
     }
 
-    public Location findById(Long id) {
+    public Location findLocationById(Long id) {
         return locationRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Location not found"));
     }

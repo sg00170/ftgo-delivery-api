@@ -18,7 +18,7 @@ public class PaymentService {
         return paymentRepository.findAll();
     }
 
-    public Payment findById(Long id) {
+    public Payment findPaymentById(Long id) {
         return paymentRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Payment not found"));
     }

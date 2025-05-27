@@ -31,7 +31,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String token = authHeader.substring(7);
             if (jwtUtil.validateToken(token)) {
                 Long userId = jwtUtil.extractUserId(token);  // ✅ PK 꺼냄
-                User user = userService.findById(userId);    // ✅ DB 조회
+                User user = userService.findUserById(userId);    // ✅ DB 조회
 
                 UsernamePasswordAuthenticationToken authentication =
                         new UsernamePasswordAuthenticationToken(

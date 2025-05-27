@@ -18,7 +18,7 @@ public class RestaurantService {
         return restaurantRepository.findAll();
     }
 
-    public Restaurant findById(Long id) {
+    public Restaurant findRestaurantById(Long id) {
         return restaurantRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Restaurant not found"));
     }

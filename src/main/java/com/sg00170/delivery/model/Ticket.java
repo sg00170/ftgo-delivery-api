@@ -11,15 +11,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "orders")
-public class Order {
+@Table(name = "tickets")
+public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Short status;
-    @Column(name = "order_total")
-    private Long orderTotal;
-    @Column(name = "delivery_time")
-    private LocalDateTime deliveryTime;
+    @Column(name = "requested_delivery_time")
+    private LocalDateTime requestedDeliveryTime;
+    @Column(name = "prepared_by_time")
+    private LocalDateTime preparedByTime;
 }
