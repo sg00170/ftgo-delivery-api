@@ -1,6 +1,5 @@
 package com.sg00170.delivery.controller;
 
-import com.sg00170.delivery.dto.UserDto;
 import com.sg00170.delivery.model.User;
 import com.sg00170.delivery.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +25,17 @@ public class UserController {
     public ResponseEntity<User> getMyInfo(Authentication authentication) {
         User user = (User) authentication.getPrincipal();
         return ResponseEntity.ok(user);
+    }
+
+    // 고객 생성
+    @PostMapping
+    public Long createConsumer(@RequestBody User user) {
+        return userService.saveUser(user);
+    }
+
+    // 고객 확인
+    @PostMapping("/{id}/verification")
+    public boolean verifyConsumerDetails() {
+        return true;
     }
 }

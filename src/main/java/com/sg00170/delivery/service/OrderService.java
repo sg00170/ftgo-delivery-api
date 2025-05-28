@@ -23,7 +23,7 @@ public class OrderService {
                 .orElseThrow(() -> new NotFoundException("Order not found"));
     }
 
-    public Long createOrder(Order order) {
+    public Long saveOrder(Order order) {
         return orderRepository.save(order).getId();
     }
 }

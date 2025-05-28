@@ -22,4 +22,8 @@ public class TicketService {
         return ticketRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Ticket not found"));
     }
+
+    public Long saveTicket(Ticket ticket) {
+        return ticketRepository.save(ticket).getId();
+    }
 }

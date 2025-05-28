@@ -18,8 +18,6 @@ public class Ticket {
     private Long id;
 
     private Short status;
-    @Column(name = "requested_delivery_time")
     private LocalDateTime requestedDeliveryTime;
-    @Column(name = "prepared_by_time")
     private LocalDateTime preparedByTime;
 }

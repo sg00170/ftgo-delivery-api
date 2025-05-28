@@ -27,6 +27,6 @@ public class OrderController {
     @PostMapping
     public Long createOrder(@RequestBody Order order) {
         // 소비자 ID, 결제 수단, 배달 주소, 배달 시각, 음식점 ID, 주문 품목
-        return orderService.createOrder(order);
+        return orderService.saveOrder(order);
     }
 }

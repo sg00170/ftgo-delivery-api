@@ -18,8 +18,6 @@ public class Delivery {
     private Long id;
 
     private Short status;
-    @Column(name = "scheduled_pick_up_time")
     private LocalDateTime scheduledPickUpTime;
-    @Column(name = "scheduled_delivery_time")
     private LocalDateTime scheduledDeliveryTime;
 }

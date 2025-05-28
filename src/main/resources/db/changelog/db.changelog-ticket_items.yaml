@@ -18,9 +18,3 @@ databaseChangeLog:
               - column:
                   name: item
                   type: varchar(255)
-        - createIndex:
-            tableName: status
-            indexName: index_tickets_status
-            columns:
-              - column:
-                  name: status

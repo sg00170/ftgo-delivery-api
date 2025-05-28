@@ -22,4 +22,8 @@ public class DeliveryService {
         return deliveryRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Delivery not found"));
     }
+
+    public Long saveDelivery(Delivery delivery) {
+        return deliveryRepository.save(delivery).getId();
+    }
 }

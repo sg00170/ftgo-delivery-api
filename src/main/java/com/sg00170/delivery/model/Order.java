@@ -18,8 +18,6 @@ public class Order {
     private Long id;
 
     private Short status;
-    @Column(name = "order_total")
     private Long orderTotal;
-    @Column(name = "delivery_time")
     private LocalDateTime deliveryTime;
 }

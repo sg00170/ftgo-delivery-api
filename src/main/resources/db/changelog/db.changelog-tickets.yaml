@@ -22,7 +22,7 @@ databaseChangeLog:
                   name: prepared_by_time
                   type: timestamp
         - createIndex:
-            tableName: status
+            tableName: tickets
             indexName: index_tickets_status
             columns:
               - column:

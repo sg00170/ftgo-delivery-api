@@ -51,8 +51,8 @@ public class UserService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
-    public boolean existsByUsername(String username) {
-        return userRepository.findByUsername(username).isPresent();
+    public Long saveUser(User user) {
+        return userRepository.save(user).getId();
     }
 
     public User authenticate(String username, String password) {
